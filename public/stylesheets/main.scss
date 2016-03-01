@@ -1,0 +1,43 @@
+@import 'reset';
+
+
+html,
+body {
+  box-sizing: border-box;
+  transition: .3s;
+  height: 100%;
+  width: 100%;
+}
+
+.tweet__list {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tweet__list--item {
+  flex: 1 1 10%;
+  display: flex;
+  align-items: center;
+
+  a {
+    font-family: 'Helvetica';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fdfdfd;
+    padding: 6rem;
+
+    img {
+      width: 75px;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+    }
+  }
+}

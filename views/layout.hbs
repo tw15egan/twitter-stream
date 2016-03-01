@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+  </head>
+  <body>
+    {{{body}}}
+
+
+
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script>
+      var socket = io();
+
+      $(document).ready(function() {
+        socket.on('tweet', function(data) {
+          var output = '<li class="tweet__list--item" style="background-color: rgb(' + Math.floor((Math.random() * 255) + 1) + ', ' + Math.floor((Math.random() * 255) + 1) + ', ' + Math.floor((Math.random() * 255) + 1) + ');"><a href="' + data.url + '">' + '<img src="' + data.profileImg + '" />' + data.text + '</a></li>';
+
+          $('.tweet__list').append(output)
+        })
+      })
+
+    </script>
+  </body>
+</html>
